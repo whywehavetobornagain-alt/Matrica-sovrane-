@@ -1,58 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="sq">
 <head>
-<title>Matrica Sovrane</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrica Sovrane</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="matrix-container">
-<h1>Matrica Sovrane 🛡️</h1>
-<p>Paneli i Agjentëve Autonomë</p>
+    <div class="matrix-container">
+        <h1>Matrica Sovrane 🛡️</h1>
+        <p class="subtitle">Sistemi i Agjentëve Autonomë për Klientët</p>
 
-<!-- Butoni i ri për vetë-aktivizimin e të 6 agjentëve menjëherë -->
-<div style="text-align: center; margin-bottom: 20px;">
-    <button onclick="autoActivateAll()" style="background: #00ffcc; color: #000; font-weight: bold; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">⚡ Auto-Aktivizo të 6 Agjentët</button>
-</div>
+        <!-- Global Action -->
+        <div class="action-box">
+            <button onclick="autoActivateAll()">⚡ Auto-Aktivizo të 6 Agjentët</button>
+        </div>
 
-<div class="agents-grid">
-    <div class="agent-card">
-        <h3>1. Vëzhguesi</h3>
-        <button onclick="runAgent(1)">Aktivizo</button>
-        <div class="output" id="out1">Në pritje...</div>
+        <div class="agents-grid">
+            <!-- 1. Vëzhguesi -->
+            <div class="agent-card">
+                <h3>1. Vëzhguesi</h3>
+                <p class="agent-desc"><strong>(The Scout):</strong> Gjen se çfarë kërkon bota në kohë reale.</p>
+                <input type="text" id="input1" placeholder="Shkruaj fjalë kyçe (p.sh. AI, Marketing)...">
+                <button onclick="runAgent(1)">Aktivizo Agjentin</button>
+                <div class="output" id="out1">Gjendja: Në pritje...</div>
+            </div>
+
+            <!-- 2. Ndërtuesi -->
+            <div class="agent-card">
+                <h3>2. Ndërtuesi</h3>
+                <p class="agent-desc"><strong>(The Builder):</strong> Shkruan kodin e pastër pa gabime.</p>
+                <select id="input2">
+                    <option value="html">Gjenero HTML Bojler</option>
+                    <option value="css">Gjenero CSS Style</option>
+                </select>
+                <button onclick="runAgent(2)">Aktivizo Agjentin</button>
+                <div class="output" id="out1"></div>
+                <div class="output" id="out2">Gjendja: Në pritje...</div>
+            </div>
+
+            <!-- 3. Lëshuesi -->
+            <div class="agent-card">
+                <h3>3. Lëshuesi</h3>
+                <p class="agent-desc"><strong>(The Deployer):</strong> E nxjerr faqen live në internet.</p>
+                <input type="text" id="input3" placeholder="Emri i projektit (p.sh. my-app)...">
+                <button onclick="runAgent(3)">Aktivizo Agjentin</button>
+                <div class="output" id="out3">Gjendja: Në pritje...</div>
+            </div>
+
+            <!-- 4. Tërheqësi -->
+            <div class="agent-card">
+                <h3>4. Tërheqësi</h3>
+                <p class="agent-desc"><strong>(The Magnet):</strong> Sjell trafik organik nga motorët e kërkimit.</p>
+                <input type="text" id="input4" placeholder="Faqja e internetit (URL)...">
+                <button onclick="runAgent(4)">Aktivizo Agjentin</button>
+                <div class="output" id="out4">Gjendja: Në pritje...</div>
+            </div>
+
+            <!-- 5. Monetizuesi -->
+            <div class="agent-card">
+                <h3>5. Monetizuesi</h3>
+                <p class="agent-desc"><strong>(The Monetizer):</strong> Gjeneron të ardhura nga çdo vizitë.</p>
+                <input type="number" id="input5" placeholder="Numri i vizitorëve ditorë...">
+                <button onclick="runAgent(5)">Aktivizo Agjentin</button>
+                <div class="output" id="out5">Gjendja: Në pritje...</div>
+            </div>
+
+            <!-- 6. Evolucionisti -->
+            <div class="agent-card">
+                <h3>6. Evolucionisti</h3>
+                <p class="agent-desc"><strong>(The Evolver):</strong> Përmirëson sistemin çdo ditë bazuar te rezultatet.</p>
+                <button onclick="runAgent(6)">Optimizo Sistemin</button>
+                <div class="output" id="out6">Gjendja: Në pritje...</div>
+            </div>
+        </div>
     </div>
-    
-    <div class="agent-card">
-        <h3>2. Analizuesi</h3>
-        <button onclick="runAgent(2)">Aktivizo</button>
-        <div class="output" id="out2">Në pritje...</div>
-    </div>
 
-    <div class="agent-card">
-        <h3>3. Ekzekutuesi</h3>
-        <button onclick="runAgent(3)">Aktivizo</button>
-        <div class="output" id="out3">Në pritje...</div>
-    </div>
-
-    <div class="agent-card">
-        <h3>4. Strategu</h3>
-        <button onclick="runAgent(4)">Aktivizo</button>
-        <div class="output" id="out4">Në pritje...</div>
-    </div>
-
-    <div class="agent-card">
-        <h3>5. Mbrojtësi</h3>
-        <button onclick="runAgent(5)">Aktivizo</button>
-        <div class="output" id="out5">Në pritje...</div>
-    </div>
-
-    <div class="agent-card">
-        <h3>6. Komandanti</h3>
-        <button onclick="runAgent(6)">Aktivizo</button>
-        <div class="output" id="out6">Në pritje...</div>
-    </div>
-</div>
-
-</div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
